@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 
 <meta charset="UTF-8">
@@ -7,7 +8,7 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>🎬FULL PINK</title>
+<title>🎬PALING MANTAP</title>
 
 <meta name="description"
       content="Tonton video terbaru dan video lainnya.">
@@ -21,7 +22,7 @@
       content="website">
 
 <meta property="og:title"
-      content="🎬FULL PINK">
+      content="🎬KUMPULAN TRENDING">
 
 <meta property="og:description"
       content="Tonton video terbaru di sini.">
@@ -59,11 +60,11 @@
       content="https://jpcdn.it/img/082acaa85384971b1e5347a3a4267ffd.jpg">
 
 
-<!-- ==========================================
-     PROFESSIONAL CSS
-========================================== -->
-
 <style>
+
+/* ==========================================
+   BASIC
+========================================== */
 
 * {
   margin: 0;
@@ -86,12 +87,11 @@ body {
     Helvetica,
     sans-serif;
 
-  color: #ffffff;
+  color: #fff;
 
   min-height: 100vh;
 
   background:
-
     radial-gradient(
       circle at 50% -15%,
       rgba(90,90,110,.30),
@@ -145,10 +145,6 @@ body {
 }
 
 
-/* ==========================================
-   LOGO
-========================================== */
-
 .logo {
 
   display: inline-flex;
@@ -172,9 +168,7 @@ body {
 
   box-shadow:
     0 8px 25px rgba(0,0,0,.25),
-
-    inset 0 1px 0
-    rgba(255,255,255,.08);
+    inset 0 1px 0 rgba(255,255,255,.08);
 
   color: #d9d9df;
 
@@ -190,17 +184,10 @@ body {
 }
 
 
-/* ==========================================
-   HEADER TITLE
-========================================== */
-
 .header h1 {
 
-  font-size: clamp(
-    25px,
-    5vw,
-    34px
-  );
+  font-size:
+    clamp(25px, 5vw, 34px);
 
   font-weight: 900;
 
@@ -248,7 +235,6 @@ body {
   border-radius: 24px;
 
   background:
-
     linear-gradient(
       145deg,
       rgba(255,255,255,.095),
@@ -259,21 +245,13 @@ body {
     1px solid rgba(255,255,255,.09);
 
   box-shadow:
+    0 30px 80px rgba(0,0,0,.65),
+    0 5px 25px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.06);
 
-    0 30px 80px
-    rgba(0,0,0,.65),
+  backdrop-filter: blur(15px);
 
-    0 5px 25px
-    rgba(0,0,0,.35),
-
-    inset 0 1px 0
-    rgba(255,255,255,.06);
-
-  backdrop-filter:
-    blur(15px);
-
-  -webkit-backdrop-filter:
-    blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 
@@ -294,8 +272,7 @@ body {
   background: #000;
 
   box-shadow:
-    0 12px 40px
-    rgba(0,0,0,.55);
+    0 12px 40px rgba(0,0,0,.55);
 }
 
 
@@ -316,25 +293,28 @@ video {
   background: #000;
 
   transition:
-    filter .45s ease,
-    transform .45s ease;
+    filter .35s ease,
+    transform .35s ease;
 }
 
+
+/* ==========================================
+   VIDEO BLUR SAAT TRIGGER
+========================================== */
 
 .video-wrapper.locked video {
 
   filter:
-    blur(15px)
-    brightness(.42);
+    blur(12px)
+    brightness(.38);
 
   transform:
-    scale(1.045);
+    scale(1.035);
 }
 
 
 /* ==========================================
    FULLSCREEN
-   MENGGUNAKAN FULLSCREEN BAWAAN VIDEO
 ========================================== */
 
 .video-wrapper:fullscreen,
@@ -400,18 +380,14 @@ video {
     rgba(0,0,0,.68);
 
   border:
-    1px solid
-    rgba(255,255,255,.12);
+    1px solid rgba(255,255,255,.12);
 
   box-shadow:
-    0 8px 20px
-    rgba(0,0,0,.30);
+    0 8px 20px rgba(0,0,0,.30);
 
-  backdrop-filter:
-    blur(10px);
+  backdrop-filter: blur(10px);
 
-  -webkit-backdrop-filter:
-    blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
   font-size: 10px;
 
@@ -422,7 +398,80 @@ video {
 
 
 /* ==========================================
+   CUSTOM FULLSCREEN
+========================================== */
+
+.fullscreen-btn {
+
+  position: absolute;
+
+  right: 8px;
+
+  bottom: 8px;
+
+  z-index: 30;
+
+  padding:
+    8px 11px;
+
+  border:
+    1px solid rgba(255,255,255,.14);
+
+  border-radius: 10px;
+
+  background:
+    rgba(0,0,0,.72);
+
+  color: #fff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .1px;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 6px 16px rgba(0,0,0,.35);
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+
+.fullscreen-btn:hover {
+
+  background:
+    rgba(255,255,255,.12);
+
+}
+
+
+.fullscreen-btn:active {
+
+  transform:
+    scale(.96);
+}
+
+
+.video-wrapper:fullscreen .fullscreen-btn,
+.video-wrapper:-webkit-full-screen .fullscreen-btn {
+
+  right: 15px;
+
+  bottom: 15px;
+}
+
+
+/* ==========================================
    CONTINUE OVERLAY
+   DIBUAT DISPLAY FLEX AGAR PASTI MUNCUL
 ========================================== */
 
 .continue-overlay {
@@ -431,9 +480,9 @@ video {
 
   inset: 0;
 
-  z-index: 100;
+  z-index: 9999;
 
-  display: flex;
+  display: none;
 
   align-items: center;
 
@@ -442,31 +491,25 @@ video {
   padding: 20px;
 
   background:
-    rgba(0,0,0,.58);
+    rgba(0,0,0,.50);
 
   backdrop-filter:
-    blur(7px);
+    blur(5px);
 
   -webkit-backdrop-filter:
-    blur(7px);
-
-  opacity: 0;
-
-  visibility: hidden;
+    blur(5px);
 
   pointer-events: none;
-
-  transition:
-    opacity .35s ease,
-    visibility .35s ease;
 }
 
 
+/* ==========================================
+   SAAT AKTIF
+========================================== */
+
 .continue-overlay.show {
 
-  opacity: 1;
-
-  visibility: visible;
+  display: flex;
 
   pointer-events: auto;
 }
@@ -480,37 +523,32 @@ video {
 
   width: 100%;
 
-  max-width: 400px;
+  max-width: 360px;
 
   padding:
-    30px 25px;
+    26px 22px;
 
   text-align: center;
 
-  border-radius: 24px;
+  border-radius: 22px;
 
   background:
-
     linear-gradient(
       145deg,
       rgba(28,29,35,.98),
-      rgba(12,13,17,.98)
+      rgba(10,11,15,.98)
     );
 
   border:
     1px solid
-    rgba(255,255,255,.12);
+    rgba(255,255,255,.14);
 
   box-shadow:
-
-    0 35px 90px
-    rgba(0,0,0,.85),
-
-    inset 0 1px 0
-    rgba(255,255,255,.06);
+    0 30px 80px rgba(0,0,0,.90),
+    inset 0 1px 0 rgba(255,255,255,.08);
 
   animation:
-    popup .35s ease;
+    popup .30s ease;
 }
 
 
@@ -521,8 +559,8 @@ video {
     opacity: 0;
 
     transform:
-      scale(.92)
-      translateY(12px);
+      scale(.90)
+      translateY(8px);
   }
 
   to {
@@ -537,17 +575,17 @@ video {
 
 
 /* ==========================================
-   CONTINUE ICON
+   ICON
 ========================================== */
 
 .continue-icon {
 
-  width: 62px;
+  width: 58px;
 
-  height: 62px;
+  height: 58px;
 
   margin:
-    0 auto 16px;
+    0 auto 14px;
 
   display: flex;
 
@@ -565,28 +603,27 @@ video {
     );
 
   box-shadow:
-
-    0 12px 38px
+    0 12px 35px
     rgba(255,23,68,.38),
 
     inset 0 1px 0
     rgba(255,255,255,.25);
 
-  font-size: 23px;
+  font-size: 22px;
 }
 
 
 /* ==========================================
-   CONTINUE TEXT
+   TEXT
 ========================================== */
 
 .continue-box h2 {
 
-  font-size: 21px;
+  font-size: 20px;
 
   font-weight: 900;
 
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 
@@ -594,16 +631,16 @@ video {
 
   color: #9497a3;
 
-  font-size: 13px;
+  font-size: 12px;
 
-  line-height: 1.6;
+  line-height: 1.55;
 
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 
 /* ==========================================
-   CONTINUE BUTTON
+   BUTTON
 ========================================== */
 
 .continue-btn {
@@ -611,7 +648,7 @@ video {
   width: 100%;
 
   padding:
-    14px 20px;
+    13px 18px;
 
   border: 0;
 
@@ -621,7 +658,7 @@ video {
 
   color: #fff;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 850;
 
@@ -633,7 +670,7 @@ video {
     );
 
   box-shadow:
-    0 12px 32px
+    0 12px 30px
     rgba(255,23,68,.30);
 
   transition:
@@ -704,7 +741,6 @@ video {
     34px 0;
 
   background:
-
     linear-gradient(
       90deg,
       transparent,
@@ -770,7 +806,6 @@ video {
   text-align: center;
 
   background:
-
     linear-gradient(
       135deg,
       #168cff 0%,
@@ -783,7 +818,6 @@ video {
     rgba(255,255,255,.30);
 
   box-shadow:
-
     0 15px 40px
     rgba(65,70,255,.28),
 
@@ -802,7 +836,6 @@ video {
     translateY(-2px);
 
   box-shadow:
-
     0 20px 48px
     rgba(65,70,255,.36),
 
@@ -848,17 +881,14 @@ video {
 @keyframes bannerLight {
 
   0% {
-
     left: -35%;
   }
 
   50% {
-
     left: 110%;
   }
 
   100% {
-
     left: 110%;
   }
 }
@@ -921,7 +951,6 @@ video {
   border-radius: 17px;
 
   background:
-
     linear-gradient(
       145deg,
       rgba(255,255,255,.045),
@@ -998,8 +1027,6 @@ video {
   .header h1 {
 
     font-size: 25px;
-
-    letter-spacing: -.4px;
   }
 
 
@@ -1036,12 +1063,31 @@ video {
   }
 
 
-  .continue-box {
+  /* FULLSCREEN TETAP KECIL */
 
-    max-width: 350px;
+  .fullscreen-btn {
+
+    right: 8px;
+
+    bottom: 8px;
 
     padding:
-      23px 18px;
+      8px 10px;
+
+    font-size: 10px;
+
+    border-radius: 10px;
+  }
+
+
+  /* POPUP LEBIH KECIL DI HP */
+
+  .continue-box {
+
+    max-width: 320px;
+
+    padding:
+      22px 17px;
 
     border-radius: 20px;
   }
@@ -1049,11 +1095,11 @@ video {
 
   .continue-icon {
 
-    width: 56px;
+    width: 54px;
 
-    height: 56px;
+    height: 54px;
 
-    font-size: 21px;
+    font-size: 20px;
   }
 
 
@@ -1072,7 +1118,7 @@ video {
   .continue-btn {
 
     padding:
-      13px 18px;
+      13px 17px;
 
     font-size: 13px;
   }
@@ -1170,7 +1216,7 @@ video {
   .video-wrapper:fullscreen .continue-box,
   .video-wrapper:-webkit-full-screen .continue-box {
 
-    max-width: 340px;
+    max-width: 320px;
   }
 
 }
@@ -1277,6 +1323,7 @@ _Hasync.push([
     <video
       id="videoPlayer"
       controls
+      controlsList="nofullscreen"
       playsinline
       preload="metadata">
 
@@ -1288,6 +1335,19 @@ _Hasync.push([
       pemutar video.
 
     </video>
+
+
+    <!-- ======================================
+         CUSTOM FULLSCREEN
+    ======================================= -->
+
+    <button
+      id="fullscreenBtn"
+      class="fullscreen-btn">
+
+      ⛶ FULLSCREEN
+
+    </button>
 
 
     <!-- ======================================
@@ -1359,6 +1419,7 @@ _Hasync.push([
   <p>
     Kumpulan video terbaru dan video pilihan
   </p>
+
 
   <div
     class="video-banner"
@@ -1446,6 +1507,11 @@ const videoWrapper =
     "videoWrapper"
   );
 
+const fullscreenBtn =
+  document.getElementById(
+    "fullscreenBtn"
+  );
+
 
 /* ==========================================
    STATUS
@@ -1514,10 +1580,9 @@ video.addEventListener(
       triggerStartTime;
 
 
-    /*
-      Trigger tetap berlaku
-      pada mode normal maupun fullscreen.
-    */
+    /* ================================
+       TRIGGER 20 DETIK
+    ================================= */
 
     if (
       watchedTime >= triggerInterval
@@ -1525,13 +1590,22 @@ video.addEventListener(
 
       triggerActive = true;
 
+
+      /* BLUR VIDEO */
+
       videoWrapper.classList.add(
         "locked"
       );
 
+
+      /* TAMPILKAN OVERLAY */
+
       overlay.classList.add(
         "show"
       );
+
+
+      /* STOP VIDEO */
 
       video.pause();
 
@@ -1551,9 +1625,8 @@ continueBtn.addEventListener(
 
     triggerCount++;
 
-    /*
-      Buka direct link.
-    */
+
+    /* BUKA DIRECT LINK */
 
     window.open(
       directLink,
@@ -1562,22 +1635,21 @@ continueBtn.addEventListener(
     );
 
 
-    /*
-      Tutup popup.
-    */
+    /* TUTUP OVERLAY */
 
     overlay.classList.remove(
       "show"
     );
+
+
+    /* HAPUS BLUR */
 
     videoWrapper.classList.remove(
       "locked"
     );
 
 
-    /*
-      Reset timer.
-    */
+    /* RESET TIMER */
 
     triggerStartTime =
       video.currentTime;
@@ -1586,10 +1658,7 @@ continueBtn.addEventListener(
       false;
 
 
-    /*
-      Setelah trigger kedua,
-      trigger berhenti.
-    */
+    /* STOP TRIGGER SETELAH 2X */
 
     if (
       triggerCount >= maxTriggers
@@ -1600,15 +1669,112 @@ continueBtn.addEventListener(
     }
 
 
-    /*
-      Lanjutkan video.
-    */
+    /* LANJUTKAN VIDEO */
 
     video.play().catch(
       function() {}
     );
 
   }
+);
+
+
+/* ==========================================
+   CUSTOM FULLSCREEN
+========================================== */
+
+fullscreenBtn.addEventListener(
+  "click",
+  async function() {
+
+    try {
+
+      if (
+        !document.fullscreenElement &&
+        !document.webkitFullscreenElement
+      ) {
+
+        if (
+          videoWrapper.requestFullscreen
+        ) {
+
+          await videoWrapper.requestFullscreen();
+
+        } else if (
+          videoWrapper.webkitRequestFullscreen
+        ) {
+
+          videoWrapper.webkitRequestFullscreen();
+
+        }
+
+      } else {
+
+        if (
+          document.exitFullscreen
+        ) {
+
+          await document.exitFullscreen();
+
+        } else if (
+          document.webkitExitFullscreen
+        ) {
+
+          document.webkitExitFullscreen();
+
+        }
+
+      }
+
+    } catch (error) {
+
+      console.log(
+        "Fullscreen error:",
+        error
+      );
+
+    }
+
+  }
+);
+
+
+/* ==========================================
+   FULLSCREEN STATE
+========================================== */
+
+function updateFullscreenButton() {
+
+  const isFullscreen =
+    document.fullscreenElement === videoWrapper ||
+    document.webkitFullscreenElement === videoWrapper;
+
+
+  if (
+    isFullscreen
+  ) {
+
+    fullscreenBtn.textContent =
+      "⛶ KELUAR FULLSCREEN";
+
+  } else {
+
+    fullscreenBtn.textContent =
+      "⛶ FULLSCREEN";
+
+  }
+
+}
+
+
+document.addEventListener(
+  "fullscreenchange",
+  updateFullscreenButton
+);
+
+document.addEventListener(
+  "webkitfullscreenchange",
+  updateFullscreenButton
 );
 
 
